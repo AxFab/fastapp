@@ -1,6 +1,6 @@
 {
   "name": "fastapp",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "A html template engine design to create web apps.",
   "main": "lib/fastapp.js",
   "scripts": {
