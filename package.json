@@ -6,11 +6,14 @@
   "scripts": {
     "test": "node test/test.js",
     "coverage": "istanbul cover test/test.js",
-    "coveralls": "coveralls"
+    "coveralls": "istanbul cover test/test.js | coveralls"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/AxFab/fastapp.git"
+  },
+  "dependencies": {
+    "async": "1.*"
   },
   "devDependencies": {
     "istanbul": "*",
