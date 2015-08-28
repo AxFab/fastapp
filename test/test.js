@@ -4,7 +4,7 @@
 
   var assert = require('assert'),
       fs = require('fs'),
-      fastapp = require('fastapp'),
+      fastapp = require('../lib/fastapp.js'),
       fapp = fastapp.noConflict();
 
   var testBuilding = function (num) {
