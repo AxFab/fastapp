@@ -6,7 +6,7 @@
   "scripts": {
     "test": "node test/test.js",
     "coverage": "istanbul cover test/test.js",
-    "coveralls": "istanbul cover test/test.js | coveralls"
+    "coveralls": "istanbul cover test/test.js && (cat ./coverage/lcov.info | coveralls)"
   },
   "repository": {
     "type": "git",
