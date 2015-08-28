@@ -1,0 +1,36 @@
+{
+  "name": "fastapp",
+  "version": "0.0.0",
+  "description": "A html template engine design to create web apps.",
+  "main": "lib/fastapp.js",
+  "scripts": {
+    "test": "node test/test.js",
+    "coverage": "istanbul cover test/test.js",
+    "coveralls": "coveralls"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AxFab/fastapp.git"
+  },
+  "devDependencies": {
+    "istanbul": "*"
+  },
+  "keywords": [
+    "html",
+    "template",
+    "engine",
+    "web-apps",
+    "apps",
+    "expressjs",
+    "webserver"
+  ],
+  "author": {
+    "name":"Fabien Bavent",
+    "email": "fabien.bavent@gmail.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AxFab/fastapp/issues"
+  },
+  "homepage": "https://github.com/AxFab/fastapp"
+}

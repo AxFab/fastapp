@@ -1,0 +1,6 @@
+#{extends 'model1.html'/}
+#{set title:'Test03'/}
+<div>
+  #{include 'add.html' /}
+  <p>#{get_if 'true' -eq 'true':'Yes': 'No' /}</p>
+</div>
