@@ -11,8 +11,6 @@ A html template engine design to create web apps.
 [![Dependencies](https://david-dm.org/AxFab/fastapp.svg)](https://david-dm.org/AxFab/fastapp)
 &nbsp; 
 [![devDependency Status](https://david-dm.org/AxFab/fastapp/dev-status.svg)](https://david-dm.org/AxFab/fastapp#info=devDependencies) 
-&nbsp; 
-[![optionalDependency Status](https://david-dm.org/AxFab/fastapp/optional-status.svg)](https://david-dm.org/AxFab/fastapp#info=optionalDependencies)
 
 
 ## Installation
