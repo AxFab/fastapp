@@ -32,12 +32,17 @@
   testFailureBuilding('02');
   testFailureBuilding('03');
   testFailureBuilding('04');
+  testFailureBuilding('05');
 
-  var listen = fapp.listenAt('./test')
+  var listen1 = fapp.listenAt('./test')
+  var listen2 = fapp.listenDir('./test/<page>.html', 'page')
   var req = {
     url: '/test01.html',
     path: '/test01.html',
     method: 'GET',
+    params: {
+      page:'test01'
+    },
     headers: {
       cookie:'SSID=7b4e2c5;lang=eo;Connected',
       'accept-language': 'en-US,en;q=0.5'
@@ -53,7 +58,13 @@
 
   fapp.tracing(req, res)
   fapp.searchInfo(req, res)
+  fapp.parseCookies(req, res)
 
-  listen(req, res)
+  fapp.tracing(req, res, function() { })
+  fapp.searchInfo(req, res, function() { })
+  fapp.parseCookies(req, res, function() { })
+
+  listen1(req, res)
+  listen2(req, res)
 
 }).call(this)
