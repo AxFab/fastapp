@@ -1,0 +1,10 @@
+#{set title:'Test04'/}
+#{get_if -n title:'<div id="T0"></div>':'<div id="T1"></div>'/}
+#{get_if -z title::'<div id="T2"></div>'/}
+#{get_if title -ne 'Test04':title:'<div id="T3"></div>'/}
+#{set session.name:'Fab'/}
+<div>
+  #{include 'add.html' /}
+  <h3>#{get session.name/}</h3>
+  <p>#{get_if 'true' -eq 'true':'Yes': 'No' /}</p>
+</div>

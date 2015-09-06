@@ -163,7 +163,7 @@ The extends allow to define a parent. This is always the last executed command o
 
 
 ## License
-This code is under the MIT license.
+This code is under the BSD 3-Clause license.
 
 
  [1]: http://expressjs.com

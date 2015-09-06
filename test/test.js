@@ -11,9 +11,9 @@
     var ctx = fapp.QryCtx(null, { dir:'./test' });
     fapp.buildFile ('./test/test'+num+'.html', ctx, function (err, data) {
       if (err) return console.log(err)
-      fs.writeFile('./test/build'+num+'.html', data);
+      // fs.writeFile('./test/build'+num+'.html', data);
       fs.readFile('./test/expect'+num+'.html', function(err, expect) {
-        // assert (data == expect);
+        assert (data == expect, 'Failed test n ' + num);
       })
     });
   }
@@ -28,11 +28,17 @@
   testBuilding('01');
   testBuilding('02');
   testBuilding('03');
+  testBuilding('04');
+  testBuilding('05');
   testFailureBuilding('01');
   testFailureBuilding('02');
   testFailureBuilding('03');
   testFailureBuilding('04');
   testFailureBuilding('05');
+  testFailureBuilding('06');
+  testFailureBuilding('07');
+  testFailureBuilding('08');
+  testFailureBuilding('09');
 
   var listen1 = fapp.listenAt('./test')
   var listen2 = fapp.listenDir('./test/<page>.html', 'page')
@@ -66,5 +72,9 @@
 
   listen1(req, res)
   listen2(req, res)
+
+  fapp.buildFile('./test/test01.html', null, function (err, data) {
+    // body...
+  })
 
 }).call(this)

@@ -13,11 +13,11 @@
     "url": "https://github.com/AxFab/fastapp.git"
   },
   "dependencies": {
-    "async": "1.*"
+    "async": "1.4.*"
   },
   "devDependencies": {
-    "istanbul": "*",
-    "coveralls": "*"
+    "istanbul": "0.3.*",
+    "coveralls": "2.11.*"
   },
   "keywords": [
     "html",
@@ -32,7 +32,7 @@
     "name":"Fabien Bavent",
     "email": "fabien.bavent@gmail.com"
   },
-  "license": "MIT",
+  "license": "BSD 3-Clause",
   "bugs": {
     "url": "https://github.com/AxFab/fastapp/issues"
   },
