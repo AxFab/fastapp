@@ -7,11 +7,10 @@ A html template engine design to create web apps.
 [![Build Status](https://api.travis-ci.org/AxFab/fastapp.svg?branch=master)](http://travis-ci.org/axfab/fastapp)
 &nbsp; 
 [![Coverage Status](https://img.shields.io/coveralls/AxFab/fastapp.svg)](https://coveralls.io/r/AxFab/fastapp?branch=master)
+&nbsp;
+[![Code Climate](https://codeclimate.com/github/AxFab/fastapp/badges/gpa.svg)](https://codeclimate.com/github/AxFab/fastapp)
 &nbsp; 
 [![Dependencies](https://david-dm.org/AxFab/fastapp.svg)](https://david-dm.org/AxFab/fastapp)
-&nbsp; 
-[![devDependency Status](https://david-dm.org/AxFab/fastapp/dev-status.svg)](https://david-dm.org/AxFab/fastapp#info=devDependencies) 
-
 
 ## Installation
 

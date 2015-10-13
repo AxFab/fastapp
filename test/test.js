@@ -11,20 +11,7 @@
     // TODO improve poratability test and try to get coverage.
     var item = require('../'+ script).noConflict();
 
-    var sbAmd  = {
-      define: function (arr, calb) { 
-        var sub = calb();
-        assert(typeof sub.noConflict === 'function');
-      },
-      require: function(name) {
-        if (name[0] === '.')
-          return require('../lib/' + name);  
-        return require(name);
-      }
-    };
-    sbAmd .define.amd = true;
-
-    var sbWeb = {
+    var sandbox = {
       require: function(name) {
         if (name[0] === '.')
           return require('../lib/' + name);  
@@ -32,13 +19,15 @@
       }
     }
 
-    vm.createContext(sbAmd)
-    vm.createContext(sbWeb)
-    fs.readFile(script, function (err, data) {
-      console.log (script, err)
+    sandbox = vm.createContext(sandbox)
+    fs.readFile(script, function (err, data) {      
       assert(!err);
-      vm.runInContext(data, sbAmd);
-      vm.runInContext(data, sbWeb);
+      if (vm.isContext(sandbox)) {
+        vm.runInContext(data, sandbox);
+      } else {
+        console.log('Error on VM to test export of script: ' + script);
+      }
+
     })
   }
 
@@ -61,7 +50,7 @@
   var testFailureBuilding = function (num) {
     var ctx = fapp.QryCtx(null, { dir:'./test' });
     fapp.buildFile ('./test/failed'+num+'.html', ctx, function (err, data) {
-      assert (err != null);
+      assert (err != null, 'Expect to fail ' + num + ", got:\n" + data);
     });
   }
 
@@ -79,6 +68,7 @@
   testFailureBuilding('07');
   testFailureBuilding('08');
   testFailureBuilding('09');
+  testFailureBuilding('10');
 
   var listen1 = fapp.listenAt('./test')
   var listen2 = fapp.listenDir('./test/<page>.html', 'page')
