@@ -4,3 +4,6 @@ node_js:
   - "0.11"
   - "0.10"
 after_success: npm run coveralls
+addons:
+    code_climate:
+        repo_token: 20dd2a32e9765dd4fb458ee26d1eb6a6d7e8a631f7b818e8bc36f42b276c451d
