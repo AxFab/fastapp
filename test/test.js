@@ -22,12 +22,7 @@
     sandbox = vm.createContext(sandbox)
     fs.readFile(script, function (err, data) {      
       assert(!err);
-      if (vm.isContext(sandbox)) {
-        vm.runInContext(data, sandbox);
-      } else {
-        console.log('Error on VM to test export of script: ' + script);
-      }
-
+      vm.runInContext(data, sandbox);
     })
   }
 
