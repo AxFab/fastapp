@@ -9,12 +9,13 @@
 
   var testExport = function (script) {
     // TODO improve poratability test and try to get coverage.
-    var item = require('../'+ script).noConflict();
+    require('../'+ script).noConflict();
 
     var sandbox = {
       require: function(name) {
-        if (name[0] === '.')
+        if (name[0] === '.') {
           return require('../lib/' + name);  
+        }
         return require(name);
       }
     }
@@ -34,10 +35,10 @@
   var testBuilding = function (num) {
     var ctx = fapp.QryCtx(null, { dir:'./test' });
     fapp.buildFile ('./test/test'+num+'.html', ctx, function (err, data) {
-      if (err) return console.log(err)
+      if (err) { return console.log(err); }
       // fs.writeFile('./test/build'+num+'.html', data);
       fs.readFile('./test/expect'+num+'.html', function(err, expect) {
-        assert (data == expect, 'Failed test n ' + num);
+        assert (data === expect.toString(), 'Failed test n ' + num);
       })
     });
   }
@@ -82,24 +83,23 @@
   };
 
   var res = {
-    send: function(err, data) { },
+    send: function() { },
     on: function(what, func) { func() },
     statusCode:200,
-  }
+  };
 
-  fapp.tracing(req, res)
-  fapp.searchInfo(req, res)
-  fapp.parseCookies(req, res)
+  fapp.tracing(req, res);
+  fapp.searchInfo(req, res);
+  fapp.parseCookies(req, res);
 
-  fapp.tracing(req, res, function() { })
-  fapp.searchInfo(req, res, function() { })
-  fapp.parseCookies(req, res, function() { })
+  fapp.tracing(req, res, function() { });
+  fapp.searchInfo(req, res, function() { });
+  fapp.parseCookies(req, res, function() { });
 
-  listen1(req, res)
-  listen2(req, res)
+  listen1(req, res);
+  listen2(req, res);
 
-  fapp.buildFile('./test/test01.html', null, function (err, data) {
-    // body...
-  })
+  fapp.buildFile('./test/test01.html', null, function () {
+  });
 
 }).call(this)
