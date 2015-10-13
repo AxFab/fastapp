@@ -4,8 +4,48 @@
 
   var assert = require('assert'),
       fs = require('fs'),
-      fastapp = require('../lib/fastapp.js'),
-      fapp = fastapp.noConflict();
+      vm = require('vm'),
+      fapp = require('../lib/fastapp.js');
+
+  var testExport = function (script) {
+    // TODO improve poratability test and try to get coverage.
+    var item = require('../'+ script).noConflict();
+
+    var sbAmd  = {
+      define: function (arr, calb) { 
+        var sub = calb();
+        assert(typeof sub.noConflict === 'function');
+      },
+      require: function(name) {
+        if (name[0] === '.')
+          return require('../lib/' + name);  
+        return require(name);
+      }
+    };
+    sbAmd .define.amd = true;
+
+    var sbWeb = {
+      require: function(name) {
+        if (name[0] === '.')
+          return require('../lib/' + name);  
+        return require(name);
+      }
+    }
+
+    vm.createContext(sbAmd)
+    vm.createContext(sbWeb)
+    fs.readFile(script, function (err, data) {
+      console.log (script, err)
+      assert(!err);
+      vm.runInContext(data, sbAmd);
+      vm.runInContext(data, sbWeb);
+    })
+  }
+
+  testExport('lib/fastapp.js');
+  testExport('lib/markupcmd.js');
+  testExport('lib/qryctx.js');
+
 
   var testBuilding = function (num) {
     var ctx = fapp.QryCtx(null, { dir:'./test' });
