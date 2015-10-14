@@ -8,7 +8,7 @@ A html template engine design to create web apps.
 &nbsp; 
 [![Coverage Status](https://img.shields.io/coveralls/AxFab/fastapp.svg)](https://coveralls.io/r/AxFab/fastapp?branch=master)
 &nbsp;
-[![Code Climate](https://codeclimate.com/github/AxFab/fastapp/badges/gpa.svg)](https://codeclimate.com/github/AxFab/fastapp)
+[![Codacy Badge](https://api.codacy.com/project/badge/9f2126cc157c451fa996d83517fcdf00)](https://www.codacy.com/app/fabien-bavent/fastapp)
 &nbsp; 
 [![Dependencies](https://david-dm.org/AxFab/fastapp.svg)](https://david-dm.org/AxFab/fastapp)
 
