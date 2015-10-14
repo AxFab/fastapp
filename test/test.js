@@ -38,7 +38,7 @@
       if (err) { return console.log(err); }
       // fs.writeFile('./test/build'+num+'.html', data);
       fs.readFile('./test/expect'+num+'.html', function(err, expect) {
-        assert (data === expect.toString(), 'Failed test n ' + num);
+        assert (data === expect.toString(), 'Failed test n ' + num + ", got:\n" + data);
       })
     });
   }
