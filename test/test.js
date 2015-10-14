@@ -18,13 +18,13 @@
         }
         return require(name);
       }
-    }
+    };
 
-    sandbox = vm.createContext(sandbox)
+    sandbox = vm.createContext(sandbox);
     fs.readFile(script, function (err, data) {      
       assert(!err);
       vm.runInContext(data, sandbox);
-    })
+    });
   }
 
   testExport('lib/fastapp.js');
@@ -66,8 +66,8 @@
   testFailureBuilding('09');
   testFailureBuilding('10');
 
-  var listen1 = fapp.listenAt('./test')
-  var listen2 = fapp.listenDir('./test/<page>.html', 'page')
+  var listen1 = fapp.listenAt('./test');
+  var listen2 = fapp.listenDir('./test/<page>.html', 'page');
   var req = {
     url: '/test01.html',
     path: '/test01.html',
@@ -102,4 +102,4 @@
   fapp.buildFile('./test/test01.html', null, function () {
   });
 
-}).call(this)
+}).call(this);
