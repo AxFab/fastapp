@@ -41,14 +41,14 @@
         assert (data === expect.toString(), 'Failed test n ' + num + ", got:\n" + data);
       });
     });
-  }
+  };
 
   var testFailureBuilding = function (num) {
     var ctx = fapp.QryCtx(null, { dir:'./test' });
     fapp.buildFile ('./test/failed'+num+'.html', ctx, function (err, data) {
       assert (err != null, 'Expect to fail ' + num + ", got:\n" + data);
     });
-  }
+  };
 
   testBuilding('01');
   testBuilding('02');
@@ -84,7 +84,7 @@
 
   var res = {
     send: function() { },
-    on: function(what, func) { func() },
+    on: function(what, func) { func(); },
     statusCode:200,
   };
 
