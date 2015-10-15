@@ -4,7 +4,7 @@ A html template engine design to create web apps.
 
 [![Npm version](https://badge.fury.io/js/fastapp.svg)](https://badge.fury.io/js/fastapp)
 &nbsp; 
-[![npm](https://img.shields.io/npm/dm/codacy-coverage.svg)](https://www.npmjs.com/package/codacy-coverage)
+[![npm download](https://img.shields.io/npm/dm/fastapp.svg)](https://www.npmjs.com/package/fastapp)
 
 [![Build Status](https://api.travis-ci.org/AxFab/fastapp.svg?branch=master)](http://travis-ci.org/axfab/fastapp)
 &nbsp; 
